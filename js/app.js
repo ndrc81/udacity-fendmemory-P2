@@ -125,9 +125,8 @@ function hideCards(card) {
 	for (card of gameCardsOpen)  {
 		card.classList.remove('open', 'show');
 	};
-	 // TODO: clear Timeout and clear Interval this may solve the bug where you can open more than two cards
 	gameCardsOpen = [];
-	hideTimer = 0;
+
 }
 
 //increments the move counter and checks if the star thresholds have been met

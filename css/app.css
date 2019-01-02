@@ -116,8 +116,9 @@ h1 {
     color: #FFD600;
 }
 
+/* the Reset Button */
 .score-panel #resetBtn {
-    background-color: #008CBA; /* Green */
+    background-color: #008CBA;
     border: none;
     border-radius: 5px;
     color: white;
@@ -128,7 +129,6 @@ h1 {
     padding: 7px 14px;
     text-align: center;
     text-decoration: none;
-
 }
 
 
