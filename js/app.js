@@ -68,6 +68,7 @@ function startTime() {
 	gameTimer = setInterval(function() {
 		gameTime++;
 	}, 1000);
+	timerCounter.innerHTML = gameTime;
 }
 
 function openCards(card) {
@@ -133,15 +134,16 @@ function hideCards(card) {
 function increaseMove() {
 	moves += 1;
 	// declare a global variable to pass to the draw stars function that is set at 3 in startgame
-	if (moves === 41) {
+	if (moves === 26) {
 		starPoints = 2;
 		drawStars(starPoints);
 
-	} else if (moves === 61) {
+	} else if (moves === 41) {
 		starPoints = 1;
 		drawStars(starPoints);
 	}
 	moveCounter.innerHTML = moves;
+	timerCounter.innerHTML = gameTime;
 }
 
 //this funtion display an information model that is called when the user either wins the game or resets the game
@@ -165,11 +167,12 @@ function displayModal() {
 
 //resets all the various counters used to keep track of scoring
 function clearCounters() {
+	gameTime = 0;
+	timerCounter.innerHTML = gameTime;
 	moves = 0;
 	moveCounter.innerHTML = moves;
 	numberPairs = 0;
 	clearInterval(gameTimer);
-	gameTime = 0;
 	starPoints = 3;
 }
 
@@ -184,8 +187,8 @@ function winGame() {
 		resetModal.innerHTML = resetMsg;
 
 		displayModal();
-		//clearCounters();
-		//startGame();
+		clearCounters();
+		startGame();
 	}
 }
 
@@ -208,7 +211,8 @@ let gameTime = 0;
 let numberPairs = 0;
 let moves = 0;
 let starPoints = 0;
-let moveCounter = document.querySelector('.moves-count');
+let moveCounter = document.querySelector('.moves-counter');
+let timerCounter = document.querySelector('.timer-counter');
 const gameDeck = document.querySelector('.deck');
 const gameCards = document.querySelectorAll('.card');
 const modal = document.getElementById('myModal');
