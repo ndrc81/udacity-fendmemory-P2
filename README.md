@@ -3,7 +3,7 @@
 ## Usage
 In order to use this project correctly you will have to download or clone the repo to access the image files required to run the game.  All that is required is to open the Index.html file in any modern browser (Chrome, Safari, Firefox).
 
-##Dependencies
+## Dependencies
 This game relies on the following api's
 1) fontawesome v4.7 api for the icons (https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css)
 2) google fonts api (https://fonts.googleapis.com/css?family=Coda)
