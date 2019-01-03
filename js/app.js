@@ -2,15 +2,17 @@
  * Create a list that holds all of your cards
  */
 
-const cardsList = ['fa-diamond', 'fa-diamond',
-					'fa-paper-plane-o', 'fa-paper-plane-o',
-					'fa-anchor', 'fa-anchor',
-					'fa-bolt', 'fa-bolt',
-					'fa-cube', 'fa-cube',
-					'fa-leaf', 'fa-leaf',
-					'fa-bicycle', 'fa-bicycle',
-					'fa-bomb', 'fa-bomb'
+const cardsInDeck = ['fa-diamond',
+					'fa-paper-plane-o',
+					'fa-anchor',
+					'fa-bolt',
+					'fa-cube',
+					'fa-leaf',
+					'fa-bicycle',
+					'fa-bomb',
 				  ];
+
+const cardsList = cardsInDeck.concat(cardsInDeck);
 
 function createCard(card){
 	return `<li class="card" data-card="${card}"><i class="fa ${card}"></i></li>`;
@@ -67,8 +69,8 @@ function startGame(){
 function startTime() {
 	gameTimer = setInterval(function() {
 		gameTime++;
+		timerCounter.innerHTML = gameTime;
 	}, 1000);
-	timerCounter.innerHTML = gameTime;
 }
 
 function openCards(card) {
@@ -174,12 +176,13 @@ function clearCounters() {
 	numberPairs = 0;
 	clearInterval(gameTimer);
 	starPoints = 3;
+	gameCardsOpen = [];
 }
 
 //signals the end of the game when user matches all cards
 function winGame() {
 	numberPairs += 1;
-	if (numberPairs === 16) {
+	if (numberPairs === 8) {
 
 		const resetModal = document.querySelector('.modal-text');
 		const resetMsg = `<p>Congratulations! You have won the game.</p><p>You took ${gameTime} seconds and ${moves} moves to complete the game.`;
